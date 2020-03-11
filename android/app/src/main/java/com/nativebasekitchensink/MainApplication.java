@@ -3,6 +3,9 @@ package com.nativebasekitchensink;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.growingio.android.plugin.rn.GrowingIOPackage;
+import com.growingio.android.sdk.collection.Configuration;
+import com.growingio.android.sdk.collection.GrowingIO;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -26,7 +29,8 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new VectorIconsPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new GrowingIOPackage()
       );
     }
 
@@ -45,5 +49,11 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    GrowingIO.startWithConfiguration(this, new Configuration()
+            .trackAllFragments()
+            .setTrackWebView(true)
+            .setDebugMode(true)
+            .setChannel("XXX应用商店")
+    );
   }
 }

@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-
+apply plugin: 'com.growingio.android'
 import com.android.build.OutputFile
 
 /**
@@ -73,7 +73,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js"
+        entryFile: "index.js"
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -95,14 +95,15 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.nativebasekitchensink"
+        applicationId "com.example.growingio"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue("string", "growingio_project_id", "86107036e5a936fd")
+        resValue("string", "growingio_url_scheme", "growing.8ee8609e1218e846")
     }
     splits {
         abi {
@@ -123,7 +124,7 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2, "arm64-v8a": 3]
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -138,7 +139,9 @@ dependencies {
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation ("com.facebook.react:react-native:0.59.9"){ force = true } // From node_modules
+    implementation 'com.growingio.android:vds-android-agent:RN-autotrack-2.8.11'
+    implementation 'androidx.annotation:annotation:+'
 }
 
 // Run this once to be able to run the application with BUCK
