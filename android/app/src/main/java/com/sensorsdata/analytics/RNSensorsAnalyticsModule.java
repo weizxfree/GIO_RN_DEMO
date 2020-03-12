@@ -588,8 +588,8 @@ public class RNSensorsAnalyticsModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void prepareView(final int tag, final boolean clickable) {
-        SALog.i("SA.RN----->", "prepareView--->" + tag + "cilckable" + clickable);
         if (clickable) {
+            Log.i("SA.RN----->", "prepareView--->" + tag + " | cilckable" + clickable);
             RNSensorsAnalyticsModule.viewArrays.append(tag, true);
         }
     }
