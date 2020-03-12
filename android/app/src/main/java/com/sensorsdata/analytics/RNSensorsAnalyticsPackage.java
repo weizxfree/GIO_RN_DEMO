@@ -1,4 +1,4 @@
-package com.nativebasekitchensink.rn;
+package com.sensorsdata.analytics;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
