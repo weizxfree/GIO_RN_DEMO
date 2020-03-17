@@ -34,7 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
                     new MainReactPackage(),
                     new VectorIconsPackage(),
                     new RNGestureHandlerPackage(),
-//                    new GrowingIOPackage()
+                    new GrowingIOPackage(),
                     new RNSensorsAnalyticsPackage()
             );
         }

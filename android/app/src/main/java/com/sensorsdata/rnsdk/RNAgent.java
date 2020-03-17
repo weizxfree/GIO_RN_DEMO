@@ -16,7 +16,7 @@ import java.lang.reflect.Field;
 import java.util.WeakHashMap;
 
 public class RNAgent {
-    private static final String TAG = "RNAgent";
+    private static final String TAG = "SAAgent";
     private static final WeakHashMap<JSTouchDispatcher, ViewGroup>
             jsTouchDispatcherViewGroupWeakHashMap = new WeakHashMap();
 
@@ -69,6 +69,7 @@ public class RNAgent {
         try {
             RNSensorsAnalyticsModule.initReactViewAttrs(view, tag);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
