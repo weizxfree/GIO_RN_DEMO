@@ -66,7 +66,7 @@ public class MainApplication extends Application implements ReactApplication {
      * 初始化 Sensors Analytics SDK
      */
     private void initSensorsDataAPI() {
-        SensorsDataAPI.sharedInstance(this, new SAConfigOptions("https://sdkdebugtest.datasink.sensorsdata.cn/sa?project=default&token=cfb8b60e42e0ae9b"));
+        SensorsDataAPI.sharedInstance(this, new SAConfigOptions("http://newsdktest.datasink.sensorsdata.cn/sa?project=weizhangxiang&token=5a394d2405c147ca"));
         // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
         List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<>();
         // $AppStart

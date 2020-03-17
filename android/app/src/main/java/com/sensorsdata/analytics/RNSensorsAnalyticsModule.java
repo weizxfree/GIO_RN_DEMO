@@ -590,12 +590,12 @@ public class RNSensorsAnalyticsModule extends ReactContextBaseJavaModule {
     public void prepareView(final int tag, final boolean clickable) {
         if (clickable) {
             Log.i("SA.RN----->", "prepareView--->" + tag + " | cilckable" + clickable);
-            RNSensorsAnalyticsModule.viewArrays.append(tag, true);
+            RNSensorsAnalyticsModule.viewArrays.put(tag, true);
         }
     }
 
     public static void initReactViewAttrs(View view, int tag) {
-        if (viewArrays.get(tag, false)) {
+        if (viewArrays.get(view.getId(), false)) {
             view.setClickable(true);
             viewArrays.remove(tag);
         }

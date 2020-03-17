@@ -36,10 +36,10 @@
 
               <data
                   android:host="debugmode"
-                  android:scheme="sab498952b" />
+                  android:scheme="sa7756c2c3" />
               <data
                   android:host="visualized"
-                  android:scheme="sab498952b"/>
+                  android:scheme="sa7756c2c3"/>
           </intent-filter>
 
       </activity>
